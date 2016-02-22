@@ -3,7 +3,6 @@
 var DURATION = 150;
 
 var ringElem = null;
-var movingId = 0;
 var prevFocused = null;
 var keyDownTime = 0;
 
@@ -40,15 +39,10 @@ docElem.addEventListener('focus', function(event) {
 	ringElem.style.width = target.offsetWidth + 'px';
 	ringElem.style.height = target.offsetHeight + 'px';
 
-	if (isFirstFocus || !isJustPressed()) {
-		return;
-	}
-
 	onEnd();
 	target.classList.add('flying-focus_target');
 	ringElem.classList.add('flying-focus_visible');
 	prevFocused = target;
-	movingId = setTimeout(onEnd, DURATION);
 }, true);
 
 
@@ -66,14 +60,12 @@ function initialize() {
 
 
 function onEnd() {
-	if (!movingId) {
-		return;
-	}
-	clearTimeout(movingId);
-	movingId = 0;
 	ringElem.classList.remove('flying-focus_visible');
-	prevFocused.classList.remove('flying-focus_target');
-	prevFocused = null;
+
+	if(prevFocused) {
+		prevFocused.classList.remove('flying-focus_target');
+		prevFocused = null;
+	}
 }
 
 
