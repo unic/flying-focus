@@ -1,0 +1,23 @@
+{
+  "name": "flying-focus",
+  "version": "1.4.1",
+  "description": "Adds a transition to the focus outline when you tab around inputs, buttons, and links.",
+  "main": "standalone/flying-focus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unic/flying-focus.git"
+  },
+  "keywords": [
+    "focus",
+    "UI",
+    "UX",
+    "accessibility",
+    "animation"
+  ],
+  "author": "Nikita Vasilyev <me@elv1s.ru>",
+  "license": "MIT",
+  "homepage": "https://github.com/NV/flying-focus#readme"
+}
